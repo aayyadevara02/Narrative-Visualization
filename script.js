@@ -101,7 +101,7 @@ function renderScene0() {
 
   g.append("text").attr("class", "axis-label")
     .attr("x", width / 2).attr("y", height + 42).attr("text-anchor", "middle")
-    .text("OPS+ (100 = league average, adjusted for park/league)");
+    .text("OPS+");
   g.append("text").attr("class", "axis-label")
     .attr("transform", "rotate(-90)")
     .attr("x", -height / 2).attr("y", -46).attr("text-anchor", "middle")
@@ -125,7 +125,7 @@ function renderScene0() {
     addAnnotations([{
       note: {
         title: "League average = 100",
-        label: "Most everyday hitters land within a narrow band around this line.",
+        label: "Most hitters land within a narrow band around this line.",
         wrap: 170
       },
       x: anchorX, y: anchorY,
@@ -170,7 +170,7 @@ function renderScene1() {
     addAnnotations([{
       note: {
         title: "185",
-        label: "Ohtani's OPS+ is 22 points clear of the next hitter on this list.",
+        label: "Ohtani's OPS+ is 22 points higher than the next hitter on this list.",
         wrap: 150
       },
       x: anchorX, y: anchorY,
@@ -277,7 +277,7 @@ function renderScene3() {
   addAnnotations([{
     note: {
       title: "The bottom tier",
-      label: "Low-OPS+ hitters trail on both OBP and SLG at once — there's no single shortcut to elite production.",
+      label: "Low OPS+ hitters trail on both OBP and SLG at once. There's no single shortcut to elite production.",
       wrap: 170
     },
     x: x(lowest.obp), y: y(lowest.slg), dx: lOff.dx, dy: lOff.dy,
@@ -325,12 +325,12 @@ function updateScene4() {
 const SCENES = [
   {
     title: "The Field",
-    text: "In 2023, 155 MLB batters logged at least 300 plate appearances — enough to matter over a full season. Their OPS+ (a park- and league-adjusted measure where 100 is exactly average) mostly clusters close to that average line.",
+    text: "In 2023, 155 MLB batters logged at least 300 plate appearances. Their OPS+ (park and league adjusted measure where 100 is average) mostly clusters close to that average line.",
     render: renderScene0
   },
   {
     title: "The Outliers",
-    text: "A handful of hitters pull far ahead of the pack. Shohei Ohtani's OPS+ of 185 sits well above even the other elite bats on this list.",
+    text: "A handful of hitters pull ahead of the pack. Shohei Ohtani's OPS+ of 185 sits well above even the other elite bats on this list.",
     render: renderScene1
   },
   {
@@ -340,12 +340,12 @@ const SCENES = [
   },
   {
     title: "No Shortcuts at the Bottom",
-    text: "Compare the top 10 against the 10 lowest OPS+ qualified hitters. The bottom group isn't just weak in one category — it trails on both OBP and SLG simultaneously.",
+    text: "Compare the top 10 against the 10 lowest OPS+ qualified hitters. The bottom group isn't just weak in one category, it trails on both OBP and SLG simultaneously.",
     render: renderScene3
   },
   {
     title: "Explore the Full Field",
-    text: "Now it's your turn. Explore all 155 qualified batters below — switch the axes, filter by team, and hover any point for a full stat line.",
+    text: "Now it's your turn. Explore all 155 qualified batters below. Switch the axes, filter by team and hover any point for a full stat line.",
     render: renderScene4
   }
 ];
