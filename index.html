@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>What Makes an Elite Hitter? | 2023 MLB Batting</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header>
+    <h1>What Makes an Elite Hitter?</h1>
+    <p class="subtitle">A narrative look at 2023 MLB batters (300+ plate appearances) through OPS+</p>
+  </header>
+
+  <main>
+    <div id="caption-panel">
+      <h2 id="scene-title"></h2>
+      <p id="scene-text"></p>
+    </div>
+
+    <div id="chart-wrapper">
+      <svg id="chart" viewBox="0 0 900 520" preserveAspectRatio="xMidYMid meet"></svg>
+      <div id="tooltip" class="tooltip" style="opacity:0;"></div>
+    </div>
+
+    <div id="controls">
+      <div id="scene-controls">
+        <button id="btn-back">&larr; Back</button>
+        <div id="scene-dots"></div>
+        <button id="btn-next">Next &rarr;</button>
+      </div>
+
+      <div id="explore-controls" class="hidden">
+        <label>
+          X axis:
+          <select id="select-x"></select>
+        </label>
+        <label>
+          Y axis:
+          <select id="select-y"></select>
+        </label>
+        <label>
+          Team:
+          <select id="select-team"></select>
+        </label>
+        <span id="explore-hint">Hover any point for full stats. Filters affect this scene only.</span>
+      </div>
+    </div>
+
+    <footer>
+      <p>Data: 2023 MLB batter statistics, players with 300+ PA (155 of 677 total batters). Built with D3.js.</p>
+    </footer>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+  <script src="https://unpkg.com/d3-svg-annotation@2.5.1/d3-annotation.min.js"></script>
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

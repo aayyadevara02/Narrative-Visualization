@@ -1,0 +1,253 @@
+:root {
+  --ink: #1a1a2e;
+  --cream: #faf6ee;
+  --navy: #16213e;
+  --red: #c0392b;
+  --gold: #d4a017;
+  --gray: #6b6b76;
+  --line: #d8d2c4;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: -apple-system, "Helvetica Neue", Arial, sans-serif;
+}
+
+header {
+  padding: 36px 24px 16px;
+  text-align: center;
+  border-bottom: 3px solid var(--navy);
+}
+
+header h1 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 2.1rem;
+  margin: 0 0 6px;
+  letter-spacing: -0.01em;
+}
+
+.subtitle {
+  margin: 0;
+  color: var(--gray);
+  font-size: 1rem;
+}
+
+main {
+  max-width: 940px;
+  margin: 0 auto;
+  padding: 24px 20px 40px;
+}
+
+#caption-panel {
+  min-height: 84px;
+  margin-bottom: 8px;
+}
+
+#scene-title {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.4rem;
+  margin: 0 0 6px;
+  color: var(--navy);
+}
+
+#scene-text {
+  margin: 0;
+  font-size: 1.02rem;
+  line-height: 1.5;
+  color: #2c2c3a;
+  max-width: 760px;
+}
+
+#chart-wrapper {
+  position: relative;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 8px;
+}
+
+#chart {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.tooltip {
+  position: absolute;
+  pointer-events: none;
+  background: var(--navy);
+  color: var(--cream);
+  padding: 8px 11px;
+  border-radius: 4px;
+  font-size: 0.82rem;
+  line-height: 1.45;
+  transition: opacity 0.12s ease;
+  max-width: 220px;
+  z-index: 10;
+}
+
+.tooltip strong {
+  color: var(--gold);
+}
+
+#controls {
+  margin-top: 16px;
+}
+
+#scene-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+}
+
+button {
+  font-family: inherit;
+  font-size: 0.95rem;
+  padding: 9px 18px;
+  border-radius: 4px;
+  border: 1px solid var(--navy);
+  background: var(--navy);
+  color: var(--cream);
+  cursor: pointer;
+}
+
+button:hover:not(:disabled) {
+  background: var(--red);
+  border-color: var(--red);
+}
+
+button:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+#scene-dots {
+  display: flex;
+  gap: 8px;
+}
+
+.dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--line);
+  border: 1px solid var(--gray);
+  transition: background 0.15s ease;
+}
+
+.dot.active {
+  background: var(--red);
+  border-color: var(--red);
+}
+
+#explore-controls {
+  margin-top: 14px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
+  justify-content: center;
+  font-size: 0.9rem;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 12px 16px;
+}
+
+#explore-controls.hidden {
+  display: none;
+}
+
+#explore-controls select {
+  font-family: inherit;
+  font-size: 0.88rem;
+  padding: 5px 8px;
+  border-radius: 4px;
+  border: 1px solid var(--line);
+  background: var(--cream);
+}
+
+#explore-hint {
+  color: var(--gray);
+  font-style: italic;
+}
+
+footer {
+  margin-top: 28px;
+  text-align: center;
+  color: var(--gray);
+  font-size: 0.8rem;
+}
+
+/* --- D3 chart element conventions --- */
+.axis text {
+  font-size: 11px;
+  fill: var(--ink);
+}
+
+.axis path,
+.axis line {
+  stroke: var(--line);
+}
+
+.axis-label {
+  font-size: 12px;
+  fill: var(--gray);
+}
+
+.bar {
+  fill: var(--navy);
+}
+
+.bar.highlight {
+  fill: var(--red);
+}
+
+.dot-point {
+  stroke: #fff;
+  stroke-width: 1px;
+}
+
+.dot-point.top {
+  fill: var(--red);
+}
+
+.dot-point.bottom {
+  fill: var(--gray);
+}
+
+.ref-line {
+  stroke: var(--gray);
+  stroke-dasharray: 4 3;
+  stroke-width: 1.3px;
+}
+
+.annotation-group {
+  /* annotations are decorative overlays only — never block hover/tooltips
+     on the data points rendered underneath them */
+  pointer-events: none;
+}
+
+.annotation-note-label,
+.annotation-note-title {
+  font-family: -apple-system, "Helvetica Neue", Arial, sans-serif;
+}
+
+.annotation-note-title {
+  font-weight: 700;
+  fill: var(--navy);
+}
+
+.annotation-note-label {
+  fill: #2c2c3a;
+}
+
+.annotation path,
+.annotation line {
+  stroke: var(--navy);
+}
