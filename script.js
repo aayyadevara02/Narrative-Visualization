@@ -273,7 +273,7 @@ function renderScene3() {
   const lowest = BOTTOM10[BOTTOM10.length - 1];
   // route the label into the open gap between the top-tier and bottom-tier
   // clusters rather than into the crowded bottom-left corner
-  const lOff = clampOffset(x(lowest.obp), y(lowest.slg), 250, -140, 170, 56);
+  const lOff = clampOffset(x(lowest.obp), y(lowest.slg), 25, -140, 170, 56);
   addAnnotations([{
     note: {
       title: "The bottom tier",
